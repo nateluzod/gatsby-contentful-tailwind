@@ -1,4 +1,5 @@
 import React from 'react'
+import BodyClassName from 'react-body-classname';
 import Link from 'gatsby-link'
 import base from './base.css'
 import Container from '../components/container'
@@ -16,10 +17,12 @@ class Template extends React.Component {
     }
 
     return (
-      <Container>
-        <Navigation />
-        {children()}
-      </Container>
+      <BodyClassName className="bg-black">
+        <Container>
+          <Navigation />
+          {children()}
+        </Container>
+      </BodyClassName>
     )
   }
 }

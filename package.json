@@ -24,6 +24,7 @@
     "gatsby": "^1.9.202",
     "gh-pages": "^1.1.0",
     "prettier": "^1.10.2",
+    "react-body-classname": "^1.2.0",
     "tailwindcss": "^0.6.0"
   },
   "homepage": "https://github.com/contentful-userland/gatsby-contentful-starter#readme",
