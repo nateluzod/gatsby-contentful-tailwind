@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import base from './base.css'
 import Container from '../components/container'
 import Navigation from '../components/navigation'
+import '../css/tailwind.css';
 
 class Template extends React.Component {
   render() {
