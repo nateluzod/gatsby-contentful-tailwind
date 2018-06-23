@@ -15,17 +15,19 @@ class RootIndex extends React.Component {
       <div>
         <Helmet title={siteTitle} />
         <Hero person={author} />
-        <div>
-          <h2>Recent articles</h2>
-          <ul>
-            {posts.map(({ node }) => {
-              return (
-                <li key={node.slug}>
-                  <ArticlePreview article={node} />
-                </li>
-              )
-            })}
-          </ul>
+        <div className='w-full'>
+          <div className='container mx-auto p-6'>
+            <h2>Recent articles</h2>
+            <ul>
+              {posts.map(({ node }) => {
+                return (
+                  <li key={node.slug}>
+                    <ArticlePreview article={node} />
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     )
@@ -65,6 +67,7 @@ export const pageQuery = graphql`
           }
           title
           image {
+            description
             file {
               url
               fileName
