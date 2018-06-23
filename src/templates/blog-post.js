@@ -19,6 +19,9 @@ class BlogPostTemplate extends React.Component {
             />
           </div>
           <h1>{post.title}</h1>
+          <p dangerouslySetInnerHTML={{
+              __html: post.description.childMarkdownRemark.html,
+            }}></p>
           <p>
             {post.publishDate}
           </p>
@@ -39,12 +42,18 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
       title
+      slug
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
         file {
           url
         }
       }
+      description {
+        childMarkdownRemark {
+          html
+        }
+      }      
       body {
         childMarkdownRemark {
           html
